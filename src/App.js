@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Layout from './Layout';
-import HomePage from './HomePage';
-import SecondPage from './SecondPage';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Layout from './components/Layout';
+import HomePageContainer from './pages/HomePageContainer';
+import SecondPage from './components/SecondPage';
 import './App.css';
 
 function App() {
@@ -11,8 +11,9 @@ function App() {
       <div className="App">
         <Layout>
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route path="/home" component={HomePageContainer} />
             <Route path="/page-2" component={SecondPage} />
+            <Redirect to="/home" />
           </Switch>
         </Layout>
       </div>

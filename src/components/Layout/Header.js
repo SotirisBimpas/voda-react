@@ -36,7 +36,7 @@ export default function Header() {
     }}>
       <div className={navigation}>
         <div className={menu}>
-          <div className={pathname === '/' ? navItemActive : navItem}>
+          <div className={pathname.includes('/home') ? navItemActive : navItem}>
             <Link to="/">Home</Link>
           </div>
           <div className={pathname === '/page-2' ? navItemActive : navItem}>

@@ -1,0 +1,30 @@
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sectionsFilters {
+	width: 80%;
+	display: flex;
+	justify-content: flex-end;
+}
+.section {
+  margin: 0 5px;
+  color: #aaa !important;
+  text-decoration: none;
+}
+.sectionActive {
+	position: relative;
+  color: #000 !important;
+}
+.sectionActive:after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: 5px;
+  height: 5px;
+  background: #2ed47d;
+  border-radius: 50%;
+}

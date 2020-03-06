@@ -1,0 +1,64 @@
+.portfolio {
+	width: 90%;
+	height: 500px;
+	display: grid;
+	grid-gap: 15px;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: repeat(3, 1fr); 
+	margin-top: 5%;
+}
+.portfolioImage {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 500;
+}
+.portfolioImage:first-child {
+	grid-column: 1 / 2;
+	grid-row: 1 / 3;
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(18, 146, 238, .7);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	animation: fadeIn 250ms both 1;
+}
+.eyeIcon {
+	width: 33px;
+	height: 20px;
+	background: url(/eye.png) no-repeat;
+	animation: rotateX 250ms both 1 100ms;
+}
+.underline {
+	width: 50px;
+	border-bottom: 1px solid #fff;
+	animation: openWidth 250ms both 100ms;
+}
+
+@keyframes openWidth {
+	from { width: 0; }
+	to { width: 50px; }
+}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }	
+}
+@keyframes rotateX {
+	from { transform: rotateX(90deg); }
+	to { transform: rotateX(0); }	
+}
+
+@media screen and (max-width: 900px) {
+	.portfolio {
+		grid-template-rows: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr); 
+	}
+}
