@@ -10,7 +10,11 @@ export default function Layout(props) {
 	return (
     <>
       <Header setSearchIsOpen={setSearchIsOpen} />
-      <div className="page-content" style={{height: '75%', width: '100%'}}>
+      <div style={{
+        height: '75%',
+        width: '100%',
+        backgroundColor: '#f8faff'
+      }}>
         {children}
       </div>
       {searchIsOpen && <Search setSearchIsOpen={setSearchIsOpen} />}
