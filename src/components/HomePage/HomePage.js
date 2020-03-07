@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Link, Redirect, Route, useLocation, useRouteMatch
+  Link, Redirect, Route, useLocation, useRouteMatch, Switch
 } from 'react-router-dom';
 import FirstSection from './FirstSection';
 import SecondSection from './SecondSection';
@@ -30,9 +30,9 @@ export default function HomePage({description, sections}) {
           Section 2
         </Link>
       </div>
-      <Route path="/home/section1" render={() => <FirstSection images={sections[0].images} />} /> 
-      <Route path="/home/section2" render={() => <SecondSection data={sections[1]} />} /> 
-      <Redirect to="/home/section1" />
+        <Route path="/home/section1" render={() => <FirstSection images={sections[0].images} />} /> 
+        <Route path="/home/section2" render={() => <SecondSection data={sections[1]} />} /> 
+        <Redirect to="/home/section1" />
     </div>
 	)
 }

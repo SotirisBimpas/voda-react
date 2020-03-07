@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
 
-export default function Header() {
+export default function Header({setSearchIsOpen}) {
   const [slides, setSlides] = useState([]);
   const [activeSlide, setActiveSlide] = useState({});
 
@@ -42,7 +42,7 @@ export default function Header() {
             <Link to="/page-2">Page 2</Link>
           </div>
         </div>
-        <div className={search} />
+        <div className={search} onClick={() => setSearchIsOpen(true)} />
       </div>
       <h1>{activeSlide.title}</h1>
 			<h2>{activeSlide.subtitle}</h2>

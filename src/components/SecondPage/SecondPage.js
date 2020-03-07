@@ -21,7 +21,9 @@ const [isHovered, setIsHovered] = useState();
       <h3 className={pageTitle}>{description}</h3>
       <div className={tilesContainer}>
         {tiles.map(t => (
-          <div className={[tile, isHovered === t.icon ? activeTile : ''].join(' ')}
+          <div 
+            key={t.icon}
+            className={[tile, isHovered === t.icon ? activeTile : ''].join(' ')}
             onMouseOver={() => setIsHovered(t.icon)}
             onMouseLeave={() => setIsHovered()}
           >
