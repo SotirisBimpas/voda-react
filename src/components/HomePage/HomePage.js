@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link, Route, useLocation, useRouteMatch, useHistory } from 'react-router-dom';
 import FirstSection from './FirstSection';
+import SecondSection from './SecondSection';
 import styles from './HomePage.module.css';
 
 export default function HomePage({description, sections}) {
@@ -11,9 +12,9 @@ export default function HomePage({description, sections}) {
 
   useEffect(
     () => {
-      push('/home/section1')
+      if (pathname === "/home") push('/home/section1')
     },
-    [push]
+    [push, pathname]
   )
 
   const { homepage, sectionsFilters, section, sectionActive } = styles;
@@ -36,7 +37,7 @@ export default function HomePage({description, sections}) {
         </Link>
       </div>
       <Route path="/home/section1" render={() => <FirstSection images={sections[0].images} />} /> 
-      {/* {path === 'section2' && <SecondSection />}  */}
+      <Route path="/home/section2" render={() => <SecondSection data={sections[1]} />} /> 
     </div>
 	)
 }
