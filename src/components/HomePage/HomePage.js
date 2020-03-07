@@ -1,21 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Route, useLocation, useRouteMatch, useHistory } from 'react-router-dom';
+import {
+  Link, Redirect, Route, useLocation, useRouteMatch
+} from 'react-router-dom';
 import FirstSection from './FirstSection';
 import SecondSection from './SecondSection';
 import styles from './HomePage.module.css';
 
 export default function HomePage({description, sections}) {
-  const { push } = useHistory();
   const { pathname } = useLocation();
   const { url } = useRouteMatch();
-
-  useEffect(
-    () => {
-      if (pathname === "/home") push('/home/section1')
-    },
-    [push, pathname]
-  )
 
   const { homepage, sectionsFilters, section, sectionActive } = styles;
 
@@ -38,6 +32,7 @@ export default function HomePage({description, sections}) {
       </div>
       <Route path="/home/section1" render={() => <FirstSection images={sections[0].images} />} /> 
       <Route path="/home/section2" render={() => <SecondSection data={sections[1]} />} /> 
+      <Redirect to="/home/section1" />
     </div>
 	)
 }
