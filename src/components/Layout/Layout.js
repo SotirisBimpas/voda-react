@@ -8,7 +8,7 @@ export default function Layout(props) {
 	return (
     <>
       <Header />
-      <div className="page-content">
+      <div className="page-content" style={{height: '75%', width: '100%'}}>
         {children}
       </div>
     </>
