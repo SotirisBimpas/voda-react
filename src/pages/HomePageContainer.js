@@ -8,10 +8,7 @@ export default function HomePageContainer() {
     () => {
       fetch('https://voda-react-assessment.herokuapp.com/home')
         .then(res => res.json())
-        .then(res => {
-          console.log(res[0]);
-          setHomeContent(res[0]);
-        });
+        .then(res => setHomeContent(res[0]));
     },
     []
   );

@@ -7,7 +7,6 @@ export default function Header() {
   const [activeSlide, setActiveSlide] = useState({});
 
   const { pathname } = useLocation();
-  console.log(pathname)
 
   useEffect(() => {
     fetch('https://voda-react-assessment.herokuapp.com/slider')
@@ -50,6 +49,7 @@ export default function Header() {
       <div className={sliderPointer}>
         {slides.length > 0 && slides.map((s, i) => (
           <div
+            key={s.title}
             className={[dot, activeSlide.title === `Slide ${i + 1}` && dotActive].join(' ')}
             onClick={() => setActiveSlide(s)}
           />

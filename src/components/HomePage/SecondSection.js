@@ -30,7 +30,7 @@ export default function SecondSection({data}) {
     const emailRegex = /[^@]+@[^\.]+\..+/;
     const passRegex = /^(?=.*[\w])(?=.*[\W])[\w\W]{8,}$/;
     const invalidValues = [];
-    if (!emailRegex.test(email)) invalidValues.push('email'); 
+    if (!emailRegex.test(email)) invalidValues.push('email');
     if (!phoneRegex.test(phone)) invalidValues.push('phone');
     if (!passRegex.test(password)) invalidValues.push('password');
     if (invalidValues.length > 0) setErrors(invalidValues);
@@ -105,6 +105,7 @@ export default function SecondSection({data}) {
             const hasError = errors.includes(input);
             return (
               <input
+                key={l}
                 type="text"
                 id={input}
                 placeholder={l}
