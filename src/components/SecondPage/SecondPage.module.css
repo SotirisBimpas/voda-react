@@ -26,10 +26,12 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
+	transition: all 250ms ease;
 }
 .activeTile {
 	background-color: #1d2b37;
 	color: #fff;
+	transition: all 250ms ease;
 }
 .activeTile > .link {
 	color: #fff;
