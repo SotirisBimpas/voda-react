@@ -1,13 +1,18 @@
 .sectionTitle {
 	width: calc(90% - 30px);
 	text-align: left;
+	font-weight: 600;
+	color: #45a1f0;
 }
 .secondSection {
 	width: 90%;
 	display: flex;
 }
 .graphTitle {
+	color: #071e57;
 	text-align: left;
+	font-weight: 600;
+	font-size: 1.2em;
 }
 .graph,
 .form {
@@ -24,6 +29,8 @@
 .percentageInfo {
 	display: flex;
 	justify-content: space-between;
+	font-variant: small-caps;
+	color: #071e57;
 }
 .sliderStop {
 	width: 100%;
@@ -58,6 +65,16 @@
 }
 .form {
 	align-items: center;
+}
+.form> p:first-child {
+	color: #071e57;
+	font-weight: 600;
+	font-size: 1.2em;
+}
+.form> p:nth-child(2)  {
+	color: #bdc4ce;
+	font-weight: 500;
+	font-size: .8em;
 }
 .formInput {
 	height: 50px;

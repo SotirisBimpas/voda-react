@@ -69,7 +69,7 @@ export default function SecondSection({data}) {
           {stats.map((s, i) => (
             <div className={stat} key={s.title}>
               <div className={percentageInfo}>
-                <p>{s.title}</p>
+                <p>{s.title.toLowerCase()}</p>
                 <p>{`${s.amount / 10}%`}</p>
               </div>
               <div className={sliderBar}>

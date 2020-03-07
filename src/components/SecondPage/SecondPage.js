@@ -20,25 +20,35 @@ const [isHovered, setIsHovered] = useState();
     <div className={secondPage}>
       <h3 className={pageTitle}>{description}</h3>
       <div className={tilesContainer}>
-        {tiles.map(t => (
-          <div 
-            key={t.icon}
-            className={[tile, isHovered === t.icon ? activeTile : ''].join(' ')}
-            onMouseOver={() => setIsHovered(t.icon)}
-            onMouseLeave={() => setIsHovered()}
-          >
-            <img
-              src={`/${t.icon}${isHovered === t.icon ? '-white' : ''}.png`}
-              alt={t.icon}
-              className={icon}
-            />
-            <div className={title}>{t.title}</div>
-            <div className={text}>{t.description}</div>
-            <a className={link} href="#">{t.link}</a>
-          </div>
+        {tiles.map(t => {
+          const active = isHovered === t.icon;
+          return ( 
+            <div 
+              key={t.icon}
+              className={[tile, active ? activeTile : ''].join(' ')}
+              onMouseOver={() => setIsHovered(t.icon)}
+              onMouseLeave={() => setIsHovered()}
+            >
+              <img
+                src={`/${t.icon}${active ? '-white' : ''}.png`}
+                alt={t.icon}
+                className={icon}
+              />
+              <div className={title}>{t.title}</div>
+              <div className={text}>{t.description}</div>
+              <div className={link}>
+                {t.link}
+                <img src={`/${active ? 'arrow-white' : 'arrow'}.png`} alt="arrow"/>                
+              </div>
+            </div>
           )
-        )}
+        })}
       </div>
     </div>
 	)
 }
+
+SecondPage.propTypes = {
+  description: PropTypes.string.isRequired,
+  tiles: PropTypes.array.isRequired,
+};

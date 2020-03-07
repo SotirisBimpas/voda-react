@@ -2,9 +2,15 @@
 	height: calc(100% - 30px);
 	background-color: #f8faff;
 	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 .pageTitle {
-	margin: 0 0 5% 0;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%);
 }
 .tilesContainer {
 	max-width: 1175px;
@@ -20,7 +26,7 @@
 	min-width: 250px;
 	min-height: 250px;
 	padding: 5px;
-	/*border: 1px solid red;*/
+	border-radius: 5px;
 	background-color: #fff;
 	display: flex;
 	flex-direction: column;
@@ -48,8 +54,12 @@
 	font-weight: 300;
 }
 .link {
+	width: 40%;
 	color: #07c;
 	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 @media screen and (max-width: 850px) {
