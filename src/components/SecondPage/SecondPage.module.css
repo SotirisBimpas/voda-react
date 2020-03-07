@@ -1,5 +1,5 @@
 .secondPage {
-	height: 100%;
+	height: calc(100% - 30px);
 	background-color: #f8faff;
 	padding: 15px;
 }

@@ -16,12 +16,12 @@
 	position: absolute;
 	top: 5%;
 	right: 5%;
-	animation: fadein 200ms both 1 400ms;
+	animation: fadein 200ms both 1 500ms;
 }
 .search {
 	width: 50%;
 	max-width: 500px;
-	animation: fadein 200ms both 1 400ms;
+	animation: fadein 200ms both 1 500ms;
 }
 .searchInput {
 	margin-top: 40vh;
@@ -48,6 +48,7 @@
 .options > a {
 	width: 100%;
 	color: white;
+	font-size: 1.2em;
 	text-align: left;
 	text-decoration: none;
 }
@@ -65,7 +66,7 @@
 	60% {
 		border-radius: 0 0 0 500px;
 	}
-	to {
+	100% {
 		width: 100%;
 		height: 100%;
 		border-radius: 0;
