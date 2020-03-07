@@ -43,8 +43,9 @@ export default function SecondSection({data}) {
     graph,
     stat,
     percentageInfo,
-    slider,
+    sliderStop,
     sliderBar,
+    slider,
     circle,
     innerCircle,
     form,
@@ -73,24 +74,28 @@ export default function SecondSection({data}) {
               </div>
               <div className={sliderBar}>
                 <div
-                  className={slider}
-                  style={{
-                    width: `${s.amount / 10}%`,
-                    backgroundImage: `linear-gradient(to right, ${colors[i].first}, ${colors[i].second})` 
-                  }}
+                  className={sliderStop}
+                  style={{width: `${s.amount / 10}%`}}
                 >
                   <div
-                    className={circle}
+                    className={slider}
                     style={{
-                      right: 0,
-                      transform: 'translate(50%, -50%)',
-                      borderColor: colors[i].second
+                      backgroundImage: `linear-gradient(to right, ${colors[i].first}, ${colors[i].second})` 
                     }}
                   >
                     <div
-                      className={innerCircle}
-                      style={{ borderColor: colors[i].second }}
-                    />
+                      className={circle}
+                      style={{
+                        right: 0,
+                        transform: 'translate(50%, -50%)',
+                        borderColor: colors[i].second,
+                      }}
+                    >
+                      <div
+                        className={innerCircle}
+                        style={{ borderColor: colors[i].second }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
