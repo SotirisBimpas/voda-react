@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SecondPage from '../components/SecondPage';
+import Loader from '../components/Utils/Loader';
 
 export default function SecondPageContainer() {
   const [secondPageContent, setSecondPageContent] = useState();
@@ -22,7 +23,7 @@ export default function SecondPageContainer() {
             tiles={secondPageContent.tiles}
           />
         )
-        : '...loading'
+        : <Loader />
       }
     </>
   )

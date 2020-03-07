@@ -8,7 +8,7 @@
 	align-items: flex-start;
 	justify-content: center;
 	box-sizing: border-box;
-	animation: opensearch 500ms both 1;
+	animation: opensearch 300ms both 1;
 	overflow: hidden;
 }
 .quitBtn {
@@ -16,12 +16,12 @@
 	position: absolute;
 	top: 5%;
 	right: 5%;
-	animation: fadein 200ms both 1 500ms;
+	animation: fadein 200ms both 1 300ms;
 }
 .search {
 	width: 50%;
 	max-width: 500px;
-	animation: fadein 200ms both 1 500ms;
+	animation: fadein 200ms both 1 300ms;
 }
 .searchInput {
 	margin-top: 40vh;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import HomePage from '../components/HomePage';
+import Loader from '../components/Utils/Loader';
 
 export default function HomePageContainer() {
   const [homeContent, setHomeContent] = useState();
@@ -22,7 +23,7 @@ export default function HomePageContainer() {
             sections={homeContent.sections}
           />
         )
-        : '...loading'
+        : <Loader />
       }
     </>
   )
